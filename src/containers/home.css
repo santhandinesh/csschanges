@@ -1,0 +1,131 @@
+
+.Header {
+    width: 100%;
+    height: 70px;
+    box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.12);
+    background-color: #ffffff;
+  }
+
+  .Footer {
+    width: 100%;
+    height: 40px;
+    box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.12);
+    background-color: #ffffff;
+  }
+
+  .Carousel-box {
+    width: 350px;
+    height: 140px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.12);
+    background-color: #ffffff;
+  }
+
+.Carousel-box-Img {
+        width: 90px;
+        height: 90px;
+        object-fit: contain;     
+}
+
+.Carousel-box-decsription {
+    width: 166px;
+    height: 21px;
+    font-family: Poppins;
+    font-size: 14px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000000;
+  }
+  .Carousel-button{
+      padding: 0;
+      border-width: 0;
+      border-radius: 10px;
+  }
+  
+  .product-carousel {
+    margin-top: 2.5em;
+    padding-bottom: 1em;
+  }
+  .width-100 {
+      width: 100%;
+  }
+
+  .Carousel-box-category{
+    width: 25px;
+    height: 24px;
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: blue;
+  }
+
+.live_logo {
+    width: 100px;
+    height: 27.3px;
+    object-fit: contain;
+  }
+
+  .Home {
+    width: 52px;
+    height: 14.4px;
+    font-family: Poppins;
+    font-size: 14px;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #565656;
+  }
+
+  .Categoties {
+    width: 77px;
+    height: 21px;
+    font-family: Poppins;
+    font-size: 14px;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #565656;
+  }
+
+  .Sign-In {
+    width: 52px;
+    height: 14.4px;
+    font-family: Poppins;
+    font-size: 14px;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #565656;
+  }
+
+  .cart {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+  }
+
+  .bg {
+    width: 1440px;
+    height: 820px;
+    object-fit: contain;
+  }
+
+  .video-box {
+    width: 100%;
+    height: 500px;
+    border-radius: 10px;
+   padding-top: 1em; 
+  }
