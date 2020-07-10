@@ -24,7 +24,7 @@ export default function ProductDetail({ props }) {
                     <div class="ml-auto mr-0 mb-0">
                         <button class="btn btn-outline-primary" style={{ borderRadius: '20px' }}>
                             <i class="fa fa-shopping-cart mr-2" aria-hidden="true"></i>
-                            2
+                            {props.cartCount || 0}
                         </button>
                     </div>
 

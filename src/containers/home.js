@@ -72,8 +72,8 @@ class Home extends React.Component {
               <Nav.Link href="#home" className="text-secondary">Sign In</Nav.Link>
               <button class="btn btn-outline-primary ml-4" style={{ borderRadius: '20px' }}>
                 <i class="fa fa-shopping-cart mr-2" aria-hidden="true"></i>
-                            2
-                        </button>
+                {this.state.cartCount || 0}
+              </button>
 
             </Nav>
           </Navbar.Collapse>
