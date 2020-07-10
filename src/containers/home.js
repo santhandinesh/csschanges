@@ -1,16 +1,21 @@
-import React from 'react';
-import './style.css';
-import Carousel from 'react-multi-carousel';
-import 'react-multi-carousel/lib/styles.css';
-import { Dialog } from "@reach/dialog";
 import "@reach/dialog/styles.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { products, responsive } from './constants';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import LiveChat from 'react-livechat'
+import React from 'react';
+import { Nav, Navbar } from "react-bootstrap";
+import LiveChat from 'react-livechat';
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
 import BackgroundImg from '../images/bg.svg';
+import { products, responsive } from './constants';
+import ProductDetail from './ProductDetail';
+import './style.css';
+
+
+
 
 class Home extends React.Component {
+
+
 
   constructor(props) {
     super(props);
@@ -22,14 +27,11 @@ class Home extends React.Component {
     localStorage.setItem("closePopup", false)
   }
 
-
-  open = (id) => {
-    console.log("product id : " + id)
+  addToCart = count => {
     this.setState({
-      showDialog: true,
-      productId: id,
-      productUrl: 'http://34.69.207.176:3000/pdp?productId=' + id
-    });
+      cartCount: (this.state.cartCount ? this.state.cartCount : 0) + 1
+    })
+    console.log(this.state.cartCount);
   }
 
   close = () => {
@@ -38,6 +40,16 @@ class Home extends React.Component {
     });
   }
 
+  open = (id) => {
+    console.log("product id : " + id)
+    this.setState({
+      showDialog: true,
+      productId: id,
+      productUrl: 'http://localhost:3000/pdp?productId=' + id,
+      handleClose: this.close,
+      handleAdded: this.addToCart
+    });
+  }
 
   render() {
 
@@ -46,29 +58,52 @@ class Home extends React.Component {
       <div className="App">
 
 
-        <div className="row header-content" style={{ marginTop: '0em' }}>
+        <Navbar bg="light" expand="lg" className="bg-white">
+          <Navbar.Brand href="#home">
+            <img src={require('../images/retailIcon.png')} alt='logo' style={{ width: '150px' }}></img>
+          </Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="mr-auto ml-4">
+              <Nav.Link href="#home" className="text-secondary mr-4">Home</Nav.Link>
+              <Nav.Link href="#link" className="text-secondaryo mr-4">Contacts</Nav.Link>
+            </Nav>
+            <Nav className="ml-auto">
+              <Nav.Link href="#home" className="text-secondary">Sign In</Nav.Link>
+              <button class="btn btn-outline-primary ml-4" style={{ borderRadius: '20px' }}>
+                <i class="fa fa-shopping-cart mr-2" aria-hidden="true"></i>
+                            2
+                        </button>
+
+            </Nav>
+          </Navbar.Collapse>
+        </Navbar>
+
+
+        {/* <div className="row header-content  align-items-center" style={{ marginTop: '0em' }}>
+
           <div className="col-lg-4">
-            <img src={require('../images/retailIcon.png')} alt='logo' className="logo"></img>
+            <img src={require('../images/retailIcon.png')} alt='logo' style={{ width: '150px' }}></img>
           </div>
-          <div className="col-lg-2" style={{ paddingTop: 20 + "px" }}>
+          <div className="col-lg-2">
             <span>Home</span>
           </div>
-          <div className="col-lg-2" style={{ paddingTop: 20 + "px" }}>
+          <div className="col-lg-2">
             <span>Contacts</span>
           </div>
 
-          <div className="col-lg-2" style={{ paddingTop: 20 + "px" }}>
+          <div className="col-lg-2">
             <span>Sign-In</span>
           </div>
 
-          <div className="col-lg-2" style={{ paddingTop: 10 + "px" }}>
+          <div className="col-lg-2">
             <img src={require('../images/cart.svg')} alt="cart" />
             <span class="badge badge-light">{this.state.cartCount}</span>
           </div>
-        </div>
+        </div> */}
 
-
-        <div className="container-fluid" style={{ backgroundImage: "url(" + BackgroundImg + ")", backgroundRepeat: "" }}>
+        < div className="container-fluid" style={{ backgroundImage: "url(" + BackgroundImg + ")", backgroundRepeat: "no-repeat" }
+        }>
           <div className="row">
             <div className="col-lg-12 video-box">
               <iframe height="500" width="80%" frameBorder="0" title="videoStream" allow="fullscreen" style={{ borderRadius: 10 + "px" }}
@@ -77,23 +112,24 @@ class Home extends React.Component {
             </div>
           </div>
           <div className="row">
-            <div className="col-lg-12 product-carousel">
+            <div className="col-lg-12 product-carousel mb-4">
               <Carousel responsive={responsive} autoPlay={this.props.deviceType !== "mobile" ? true : false}
                 infinite={true} removeArrowOnDeviceType={["tablet", "mobile"]}
                 deviceType={this.props.deviceType}>
                 {products.map(el => (
 
                   <button onClick={() => this.open(el.id)} className="Carousel-button">
-                    <div className="Carousel-box" style={{padding: 'center'}}>
-                      <table>
-                        <tbody style={{ margin: "0 auto" }}>
+                    <div className="Carousel-box" style={{ padding: '15px' }}>
+                      <table style={{ width: '100px' }} >
+                        <tbody>
                           <tr>
                             <td><img src={require('../images/' + el.image)} className="Carousel-box-Img" alt="" /></td>
-                            <td style={{ textAlign: "left", paddingLeft:'10% ' }}>
-                              <span className="Carousel-box-decsription"> {el.shortDescription}</span><br></br>
-                              <span className="category-name">{el.Category}</span><br></br>
-                              <span style={{ color: "red" }} className="strikeprice">${el.listprice}</span>
-                              <span style={{paddingLeft:'10px'}}>${el.sellingprice}</span>
+                            <td style={{ textAlign: "left", paddingLeft: '10% ' }}>
+                              <h6 className="text-nowrap mr-4" style={{ width: '160px', textOverflow: 'ellipsis', overflow: 'hidden' }}>{el.shortDescription}</h6>
+                              <h5 className="text-success" >${el.sellingprice}
+                                <h6 className="text-secondary d-inline ml-2" ><del>${el.listprice}</del></h6>
+                              </h5>
+                              <h6 className="category-name text-nowrap" style={{ textOverflow: 'ellipsis', overflow: 'hidden', fontSize: '0.7rem' }}>{el.Category}</h6>
                             </td>
                           </tr>
                         </tbody>
@@ -105,22 +141,17 @@ class Home extends React.Component {
 
               </Carousel>
 
-              <Dialog aria-label="" isOpen={this.state.showDialog} onDismiss={this.close} style={{ marginTop: '50vh', width: '80em', height: '50em' }}>
-                <button className="close-btn" onClick={this.close}>close</button>
-                  <iframe className="responsive-iframe" frameBorder="0" title="videoStream" style={{ borderRadius: 10 + "px" }}
-                    src={this.state.productUrl}
-                  ></iframe>
-              </Dialog>
+              {this.state.showDialog && <ProductDetail props={this.state}></ProductDetail>}
 
               <LiveChat license={12050871} />
 
             </div>
           </div>
-        </div>
+        </div >
         <div className="Footer">
           <p>&copy; thefamousretailer</p>
         </div>
-      </div>
+      </div >
 
     );
   }

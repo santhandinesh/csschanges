@@ -1,5 +1,5 @@
 
-.Header {
+.header {
     width: 100%;
     height: 70px;
     box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.12);
@@ -14,31 +14,18 @@
   }
 
   .Carousel-box {
-    width: 350px;
-    height: 140px;
     border-radius: 10px;
     box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.12);
     background-color: #ffffff;
+    padding: 10px;
   }
 
 .Carousel-box-Img {
-        width: 90px;
-        height: 90px;
-        object-fit: contain;     
+    width: 90px;
+    height: 90px;
+    object-fit: contain;     
 }
 
-.Carousel-box-decsription {
-    width: 166px;
-    height: 21px;
-    font-family: Poppins;
-    font-size: 14px;
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    color: #000000;
-  }
   .Carousel-button{
       padding: 0;
       border-width: 0;
@@ -129,3 +116,4 @@
     border-radius: 10px;
    padding-top: 1em; 
   }
+

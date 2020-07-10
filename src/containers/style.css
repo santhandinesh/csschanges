@@ -1,13 +1,14 @@
 .header-content {
     width: 100%;
     box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.12);
-    background-color: #ffffff;
-    margin: 0em;
+    border-bottom: 1px solid #eee;
+    margin: 0rem;    
+    padding: 5px;
 }
 
 .logo {
     width: 7em;
-    height: 5em;
+    height: 1.5em;
     object-fit: contain;
 }
 
@@ -60,8 +61,6 @@
 
   
   .Carousel-box {
-    width: 350px;
-    height: 140px;
     border-radius: 10px;
     box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.12);
     background-color: #ffffff;
@@ -73,18 +72,6 @@
         object-fit: contain;     
 }
 
-.Carousel-box-decsription {
-    width: 166px;
-    height: 21px;
-    font-size: 14px;
-    text-decoration: solid;
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    color: #000000;
-  }
   .Carousel-button{
       padding: 0;
       border-width: 0;
@@ -141,12 +128,23 @@
 
 
 .category-name {
-    margin: 10px 10px 0 0;
+    margin-top: 5px;
     padding-left: 0.5em;
     padding-right: 0.5em;
     box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.12);
-    background-color: #ccc;
+    background-color: #eee;
    border-radius: 0 10px 10px 0;
    border-left: 3px solid black;
    white-space: nowrap;
+   display:inline-block;
+   font-weight: 400
+}
+
+.modal-header-button {
+  float: right;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1;
+  color: #000;
+  text-shadow: 0 1px 0 #fff;
 }
