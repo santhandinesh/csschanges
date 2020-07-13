@@ -54,7 +54,7 @@ export default function ProceedToCheckout({ product, cartCount, handleClose, set
                                 <span className="font-weight-bold">${product.sellingprice}</span>
                             </td>
                             <td style={{ verticalAlign: 'middle' }}>
-                                <button className="btn btn-danger">
+                                <button className="btn btn-danger text-nowrap">
                                     <i class="fa fa-times mr-2" aria-hidden="true"></i>
 
                                     Remove
