@@ -37,24 +37,28 @@ export default function ProceedToCheckout({ product, cartCount, handleClose, set
                                 Price
                         </th>
                             <th className="border-top-0">
-                                Action
-                        </th>
+
+                            </th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td className="">
                                 <img src={require('../images/' + product.image)} alt='logo' className="product-img" style={{ height: '50px', width: '50px' }}></img>
-                                <h6 className="d-inline ml-3 text-primary">{product.shortDescription}</h6>
+                                <h6 className="d-inline ml-3">{product.shortDescription}</h6>
                             </td>
                             <td style={{ verticalAlign: 'middle' }}>
-                                1
+                                <input type="text" style={{ width: '40px', textAlign: 'center' }} value="1"></input>
                             </td>
                             <td style={{ verticalAlign: 'middle' }}>
-                                ${product.sellingprice}
+                                <span className="font-weight-bold">${product.sellingprice}</span>
                             </td>
                             <td style={{ verticalAlign: 'middle' }}>
-                                <button className="btn btn-danger">Remove</button>
+                                <button className="btn btn-danger">
+                                    <i class="fa fa-times mr-2" aria-hidden="true"></i>
+
+                                    Remove
+                                </button>
                             </td>
                         </tr>
                         <tr>
@@ -64,10 +68,10 @@ export default function ProceedToCheckout({ product, cartCount, handleClose, set
 
                             </td>
                             <td style={{ verticalAlign: 'middle' }}>
-                                <h6>Subtotal</h6>
+                                <h6 className="d-inline">Subtotal</h6>
                             </td>
                             <td style={{ verticalAlign: 'middle' }}>
-                                <h6>${product.sellingprice}</h6>
+                                <h6 className="d-inline font-weight-bold">${product.sellingprice}</h6>
                             </td>
                         </tr>
                         <tr>
@@ -77,10 +81,10 @@ export default function ProceedToCheckout({ product, cartCount, handleClose, set
 
                             </td>
                             <td style={{ verticalAlign: 'middle' }}>
-                                <h6>Shipping</h6>
+                                <h6 className="d-inline">Shipping</h6>
                             </td>
                             <td style={{ verticalAlign: 'middle' }}>
-                                <h6>$0</h6>
+                                <h6 className="d-inline font-weight-bold">$0</h6>
                             </td>
                         </tr>
                         <tr>
@@ -90,10 +94,10 @@ export default function ProceedToCheckout({ product, cartCount, handleClose, set
 
                             </td>
                             <td style={{ verticalAlign: 'middle' }}>
-                                <h4 className="text-success">Total</h4>
+                                <h4 className="text-success1 d-inline">Total</h4>
                             </td>
                             <td style={{ verticalAlign: 'middle' }}>
-                                <h4 className="text-success">${product.sellingprice}</h4>
+                                <h4 className="text-success1 d-inline font-weight-bold">${product.sellingprice}</h4>
                             </td>
                         </tr>
                     </tbody>
@@ -102,6 +106,7 @@ export default function ProceedToCheckout({ product, cartCount, handleClose, set
             </div>
             <div className="modal-footer">
                 <button className={"btn btn-secondary"} onClick={() => { setStage(0) }}>
+                    <i class="fa fa-chevron-left" aria-hidden="true"></i>
                     <span className="ml-2">{"Back"}</span>
                 </button>
                 <button className={"btn btn-primary"} onClick={() => { setStage(2) }}>

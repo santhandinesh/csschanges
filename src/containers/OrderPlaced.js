@@ -17,8 +17,25 @@ export default function OrderPlaced({ handleClose }) {
                 </button>
             </div>
             <div className="modal-body">
-                <div class="alert alert-success" role="alert">
-                    <strong>Your Order has been placed. Order Id is : 123456</strong>
+
+                <div className="d-flex justify-content-center">
+                    <h5>Your order has been placed</h5>
+                </div>
+
+                <hr />
+
+                <div className="d-flex justify-content-center border-top-1">
+                    <h6 className="text-secondary">Your order number is</h6>
+                </div>
+
+                <div className="d-flex justify-content-center border-bottom-1">
+                    <h3 className="text-success">123456</h3>
+                </div>
+
+                <hr />
+
+                <div className="d-flex justify-content-center ">
+                    <h6 className="text-secondary">you will receive an email confirmation shortly to <span className="text-primary">john.smith@gmail.com</span></h6>
                 </div>
             </div>
         </>

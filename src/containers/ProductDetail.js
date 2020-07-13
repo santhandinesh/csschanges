@@ -15,6 +15,7 @@ export default function ProductDetail({ props }) {
 
     const onAddToCart = count => {
         setStage(1);
+        props.handleAdded(count);
     }
 
     const checkout = count => {
@@ -24,8 +25,8 @@ export default function ProductDetail({ props }) {
     return (
         <>{product &&
             <Modal show={true} onHide={props.handleClose} size="lg">
-                {stage === 0 && <AddToCart product={product} handleClose={props.handleClose} onAddToCart={onAddToCart}></AddToCart>}
-                {stage === 1 && <ProceedToCheckout product={product} handleClose={props.handleClose} setStage={setStage}></ProceedToCheckout>}
+                {stage === 0 && <AddToCart product={product} handleClose={props.handleClose} onAddToCart={onAddToCart} cartCount={props.cartCount}></AddToCart>}
+                {stage === 1 && <ProceedToCheckout product={product} handleClose={props.handleClose} setStage={setStage} cartCount={props.cartCount}></ProceedToCheckout>}
                 {stage === 2 && <OrderPlaced product={product} handleClose={props.handleClose}></OrderPlaced>}
             </Modal>}
         </>
